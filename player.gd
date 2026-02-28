@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const GRAVITY = 1200.0
 const MOVE_SPEED = 300.0
@@ -16,8 +17,8 @@ func _physics_process(delta):
 	
 	velocity.y = clamp(velocity.y, -INF, MAX_FALL_SPEED)
 
-	# Left / Right Movement
-	var dir = Input.get_axis("ui_left", "ui_right")
+	# Left / Right Movementaaaaaaaaaaaaaa
+	var dir = Input.get_axis("ui_LEFT", "ui_RIGHT")
 	velocity.x = dir * MOVE_SPEED
 
 	move_and_slide()
