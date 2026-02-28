@@ -24,8 +24,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Death check
-	if global_position.y > 2000:
-		die()
+
 
 func die():
 	global_position = spawn_position
