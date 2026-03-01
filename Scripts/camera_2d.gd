@@ -1,12 +1,15 @@
 extends Camera2D
 
-var is_in_menu := false
-@export var player_path : NodePath
-var player
+@export var button: Node2D
+@export var player: Node2D
 
-func _ready():
-	player = get_node(player_path)
+var following_player = false
 
 func _process(delta):
-	if player:
+	if following_player:
 		global_position = player.global_position
+	else:
+		global_position = button.global_position
+
+func switch_to_player():
+	following_player = true
