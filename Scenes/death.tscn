@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://4evjm6uf86bi"]
 
-[ext_resource type="Script" uid="uid://cp4nujnuyc65m" path="res://death.gd" id="1_qemge"]
+[ext_resource type="Script" uid="uid://cp4nujnuyc65m" path="res://Scripts/death.gd" id="1_qemge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf77f"]
-size = Vector2(70, 70)
+size = Vector2(16, 16)
 
 [node name="Death" type="Area2D"]
 script = ExtResource("1_qemge")
