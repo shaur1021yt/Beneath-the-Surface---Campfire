@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ct0o88y25fw0h" path="res://assets/Sigma dude/animations/running-4-frames/west/frame_003.png" id="8_rv870"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3tkgg"]
-radius = 11.0
-height = 50.0
+radius = 14.0
+height = 98.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efikj"]
 atlas = ExtResource("3_l6ohk")
@@ -108,11 +108,14 @@ animations = [{
 script = ExtResource("1_xhfnw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_3tkgg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+position = Vector2(-1, 7)
+scale = Vector2(2.4553573, 2.4553573)
 sprite_frames = SubResource("SpriteFrames_d6rpx")
 animation = &"falling "
+frame_progress = 0.882503
 
 [connection signal="air" from="." to="." method="_on_air"]

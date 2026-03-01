@@ -6,6 +6,7 @@
 size = Vector2(16, 16)
 
 [node name="Death" type="Area2D"]
+scale = Vector2(1.4265774, -2.7210073)
 script = ExtResource("1_qemge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

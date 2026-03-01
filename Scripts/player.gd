@@ -3,56 +3,75 @@ class_name Player
 
 signal air
 
-const GRAVITY = 1200.0
-const MOVE_SPEED = 300.0
-const MAX_FALL_SPEED = 900.0
-var is_in_air = false :
-	set(val):
-		is_in_air = val
-		if is_in_air:
-			air.emit()
-var spawn_position : Vector2
+const GRAVITY := 1200.0
+const MOVE_SPEED := 300.0
+const MAX_FALL_SPEED := 900.0
 
-@onready var anim = $AnimatedSprite2D
+@export var unlock_y_position: float = 800.0
 
+var control_locked := false
+var spawn_position: Vector2
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
 	spawn_position = global_position
 
-
 func _physics_process(delta):
-	if is_in_air == is_on_floor():
-		is_in_air = not is_on_floor()
-	# Apply Gravity
+	apply_gravity(delta)
+	handle_movement()
+	move_and_slide()
+	update_animation()
+
+# -------------------------
+# GRAVITY
+# -------------------------
+
+func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+	
+	velocity.y = min(velocity.y, MAX_FALL_SPEED)
 
-	velocity.y = clamp(velocity.y, -INF, MAX_FALL_SPEED)
+# -------------------------
+# MOVEMENT
+# -------------------------
 
-	# Left / Right Movement
-	var dir = Input.get_axis("ui_LEFT", "ui_RIGHT") # MUST be lowercase
+func handle_movement():
+	# Only allow movement if:
+	# 1. Dialogue is NOT active
+	# 2. Player has fallen past unlock_y_position
+	
+	if control_locked:
+		velocity.x = 0
+		return
+	
+	if global_position.y < unlock_y_position:
+		velocity.x = 0
+		return
+	
+	var dir := Input.get_axis("ui_LEFT", "ui_RIGHT")
 	velocity.x = dir * MOVE_SPEED
 
-	move_and_slide()
+# -------------------------
+# ANIMATION
+# -------------------------
 
-	update_animation(dir)
-
-
-func update_animation(dir):
-	# Falling animationaad
-
-	# Running animation
-	if dir != 0:
+func update_animation():
+	if not is_on_floor():
+		anim.play("falling")
+		return
+	
+	if abs(velocity.x) > 0:
 		anim.play("run right")
-		anim.flip_h = dir < 0
+		anim.flip_h = velocity.x < 0
 	else:
-		anim.stop()  # Stops on first frame (acts like idle)
+		anim.stop()
 
+# -------------------------
+# RESPAWN
+# -------------------------
 
 func die():
 	global_position = spawn_position
 	velocity = Vector2.ZERO
-
-
-func _on_air() -> void:
-	anim.play("falling")

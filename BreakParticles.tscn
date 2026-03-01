@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwj3qobwe6pty"]
+
+[ext_resource type="Texture2D" uid="uid://bvtisix4yq06o" path="res://assets/Screenshot 2026-03-01 100037.png" id="1_mddwl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+texture = ExtResource("1_mddwl")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
