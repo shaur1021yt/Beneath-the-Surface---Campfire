@@ -65,5 +65,5 @@ layout_mode = 2
 
 [node name="DemonVoice" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_2x5cq")
-volume_db = 6.0
+volume_db = 12.0
 max_distance = 10000000.0
