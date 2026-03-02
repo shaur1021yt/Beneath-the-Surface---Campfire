@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ufoyrq720gv1"]
+[gd_scene load_steps=25 format=3 uid="uid://ufoyrq720gv1"]
 
 [ext_resource type="Script" uid="uid://c63lebbolk1u7" path="res://Scripts/player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://c26ddeeq6qhsl" path="res://assets/Sigma dude/animations/two-footed-jump/south/frame_003.png" id="3_l6ohk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dmjfs7lx1hyxb" path="res://assets/Sigma dude/animations/running-4-frames/east/frame_003.png" id="6_wi0c6"]
 [ext_resource type="Texture2D" uid="uid://ktr4uyniun6h" path="res://assets/Sigma dude/animations/running-4-frames/west/frame_002.png" id="7_jatw7"]
 [ext_resource type="Texture2D" uid="uid://ct0o88y25fw0h" path="res://assets/Sigma dude/animations/running-4-frames/west/frame_003.png" id="8_rv870"]
+[ext_resource type="AudioStream" uid="uid://da50trro38alo" path="res://assets/floraphonic-slime-splat-with-drips-5-219260.mp3" id="12_glx4g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3tkgg"]
 radius = 14.0
@@ -117,5 +118,11 @@ scale = Vector2(2.4553573, 2.4553573)
 sprite_frames = SubResource("SpriteFrames_d6rpx")
 animation = &"falling "
 frame_progress = 0.882503
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 7)
+scale = Vector2(2.4553573, 2.4553573)
+stream = ExtResource("12_glx4g")
+volume_db = 12.0
 
 [connection signal="air" from="." to="." method="_on_air"]

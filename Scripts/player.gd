@@ -13,9 +13,12 @@ var control_locked := false
 var spawn_position: Vector2
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
+
 
 func _ready():
 	spawn_position = global_position
+
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -23,25 +26,21 @@ func _physics_process(delta):
 	move_and_slide()
 	update_animation()
 
+
 # -------------------------
 # GRAVITY
 # -------------------------
-
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	
 	velocity.y = min(velocity.y, MAX_FALL_SPEED)
 
+
 # -------------------------
 # MOVEMENT
 # -------------------------
-
 func handle_movement():
-	# Only allow movement if:
-	# 1. Dialogue is NOT active
-	# 2. Player has fallen past unlock_y_position
-	
 	if control_locked:
 		velocity.x = 0
 		return
@@ -53,25 +52,47 @@ func handle_movement():
 	var dir := Input.get_axis("ui_LEFT", "ui_RIGHT")
 	velocity.x = dir * MOVE_SPEED
 
+
 # -------------------------
 # ANIMATION
 # -------------------------
-
 func update_animation():
-	if not is_on_floor():
-		anim.play("falling")
+
+	# If holding RIGHT
+	if Input.is_action_pressed("ui_RIGHT"):
+		if anim.animation != "run right":
+			anim.play("run right")
+		anim.flip_h = false
 		return
-	
+
+	# If holding LEFT
+	if Input.is_action_pressed("ui_LEFT"):
+		if anim.animation != "run right":
+			anim.play("run right")
+		anim.flip_h = true
+		return
+
+	# If nothing held → falling animation
+	if anim.animation != "falling":
+		anim.play("falling")
+
+	# Running
 	if abs(velocity.x) > 0:
-		anim.play("run right")
+		if anim.animation != "run right":
+			anim.play("run right")
 		anim.flip_h = velocity.x < 0
 	else:
-		anim.stop()
+		# Idle
+		if anim.animation != "idle":
+			anim.play("idle")
+
 
 # -------------------------
 # RESPAWN
 # -------------------------
-
 func die():
+	if death_sound:
+		death_sound.play()
+
 	global_position = spawn_position
 	velocity = Vector2.ZERO

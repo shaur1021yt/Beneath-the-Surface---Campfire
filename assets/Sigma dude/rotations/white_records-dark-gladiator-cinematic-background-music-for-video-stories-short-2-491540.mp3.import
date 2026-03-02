@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5yj8ucemm0b2"
+path="res://.godot/imported/white_records-dark-gladiator-cinematic-background-music-for-video-stories-short-2-491540.mp3-bcff3c135cbeced2dc28263e0f284d33.mp3str"
+
+[deps]
+
+source_file="res://assets/Sigma dude/rotations/white_records-dark-gladiator-cinematic-background-music-for-video-stories-short-2-491540.mp3"
+dest_files=["res://.godot/imported/white_records-dark-gladiator-cinematic-background-music-for-video-stories-short-2-491540.mp3-bcff3c135cbeced2dc28263e0f284d33.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

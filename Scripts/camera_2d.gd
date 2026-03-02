@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	# Smooth follow AFTER switch
 	if following_player and player:
-		global_position = global_position.lerp(player.global_position, 5 * delta)
+		global_position = player.global_position
 
 func switch_to_player():
 	if player == null:

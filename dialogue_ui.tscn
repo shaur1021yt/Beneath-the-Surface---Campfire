@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfygnr0n53wej"]
+
+[ext_resource type="Script" uid="uid://cnpq57a6mq2tj" path="res://dialogue_ui.gd" id="1_njptv"]
+[ext_resource type="AudioStream" uid="uid://cbyr4xycf213x" path="res://Sounds/Slow and steady wins the race.mp3" id="2_2x5cq"]
+
+[node name="DialogueUI" type="CanvasLayer"]
+script = ExtResource("1_njptv")
+
+[node name="TextBox" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = -30.0
+offset_right = 9.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -37.0
+offset_right = -8.089966
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueText" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = -65.0
+offset_top = 57.0
+offset_right = 1085.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 41
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = -3.296
+anchor_right = 0.337
+anchor_bottom = -3.026
+offset_left = 27.75
+offset_top = 774.376
+offset_right = 411.989
+offset_bottom = 820.636
+scale = Vector2(0.945, 0.945)
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Choice1" type="Button" parent="TextBox/ButtonContainer"]
+custom_minimum_size = Vector2(200, 90)
+layout_mode = 2
+
+[node name="Choice2" type="Button" parent="TextBox/ButtonContainer"]
+custom_minimum_size = Vector2(200, 90)
+layout_mode = 2
+
+[node name="DemonVoice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2x5cq")
+volume_db = 6.0
+max_distance = 10000000.0

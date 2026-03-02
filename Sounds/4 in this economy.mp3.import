@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn3cll7rp1t5d"
+path="res://.godot/imported/4 in this economy.mp3-a861bf4f51faf632613417e509fde258.mp3str"
+
+[deps]
+
+source_file="res://Sounds/4 in this economy.mp3"
+dest_files=["res://.godot/imported/4 in this economy.mp3-a861bf4f51faf632613417e509fde258.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

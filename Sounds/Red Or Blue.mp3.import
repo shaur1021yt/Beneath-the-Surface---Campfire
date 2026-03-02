@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8x37onmdiquf"
+path="res://.godot/imported/Red Or Blue.mp3-c9a0441c37b4ee534449ebb4119d046a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Red Or Blue.mp3"
+dest_files=["res://.godot/imported/Red Or Blue.mp3-c9a0441c37b4ee534449ebb4119d046a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

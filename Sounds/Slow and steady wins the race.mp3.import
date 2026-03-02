@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbyr4xycf213x"
+path="res://.godot/imported/Slow and steady wins the race.mp3-5c211903e5f2cb3dd824c7021d341781.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Slow and steady wins the race.mp3"
+dest_files=["res://.godot/imported/Slow and steady wins the race.mp3-5c211903e5f2cb3dd824c7021d341781.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

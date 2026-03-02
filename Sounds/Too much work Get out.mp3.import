@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://babueg0uc6254"
+path="res://.godot/imported/Too much work Get out.mp3-5e6a4d814365840b49f5ee749ba0b00d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Too much work Get out.mp3"
+dest_files=["res://.godot/imported/Too much work Get out.mp3-5e6a4d814365840b49f5ee749ba0b00d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

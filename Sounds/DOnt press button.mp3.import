@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2wrxsei2tdu8"
+path="res://.godot/imported/DOnt press button.mp3-dca3971e8a00deeddcef3b2cf2477ea1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/DOnt press button.mp3"
+dest_files=["res://.godot/imported/DOnt press button.mp3-dca3971e8a00deeddcef3b2cf2477ea1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
